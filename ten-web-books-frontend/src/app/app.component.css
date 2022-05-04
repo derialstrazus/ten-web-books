@@ -11,3 +11,11 @@
     flex-wrap: wrap;
 }
 
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-item {
+    flex-grow: 1;
+}

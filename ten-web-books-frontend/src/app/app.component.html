@@ -13,14 +13,25 @@
   </div>
 
   <div id="content">
-    <div id="general-list">
-      <app-index-item></app-index-item>
-
-      <app-index-item></app-index-item>
-
-      <app-index-item></app-index-item>
-    </div>
     
+    <div id="content-left" class="content-item">
+      <div>
+        <button *ngFor="let book of books" (click)="showBookDetails(book)">
+          > {{book.title}}
+        </button>
+      </div>
+    </div>
+
+    
+
+    <div *ngIf="selectedBook" id="content-right" class="content-item">
+      <h3>{{selectedBook.title}}</h3>
+      <img src="{{selectedBook.cover}}">
+      <p>Title: {{selectedBook.title}}</p>
+      <p>Author: {{selectedBook.author}}</p>
+      <p>Premise: {{selectedBook.summary}}</p>
+    </div>
+
   </div>
 
 </body>
